@@ -1,0 +1,48 @@
+package org.example.produto.dto;
+
+import java.util.Objects;
+
+public class ProdutoCreateDTO {
+    private Long id;
+    private String nome;
+    private Double preco;
+
+    public ProdutoCreateDTO() {}
+
+    public ProdutoCreateDTO(String nome, Double preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        ProdutoCreateDTO that = (ProdutoCreateDTO) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
+}
